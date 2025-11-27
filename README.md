@@ -1,12 +1,12 @@
 Run a MySQL container with the Sakila dataset pre-loaded.
-```
+```sh
 docker build -t sakila-mysql .
 docker run -dp 3306:3306 --name sakila-instance  -e MYSQL_ROOT_PASSWORD=root sakila-mysql
 docker exec -it -e MYSQL_PWD=root sakila-instance mysql -u root sakila
 ```
 
 Run a SQL file
-```
+```sh
 docker exec -i -e MYSQL_PWD=root sakila-instance mysql -u root sakila < 03/02_categories.sql
 
 # Table format
